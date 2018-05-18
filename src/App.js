@@ -31,8 +31,8 @@ class App extends React.Component {
 render() {
   var site = 'http://af-react:9040'
   var combines = []
-  this.state.data.forEach(item => {
-    combines.push(<p key={item.nid[0].value.toString}><a href={site + item.path[0].alias} >{item.title[0].value}</a></p> );
+  this.state.data.map((item, i) => {
+    combines.push(<p key={i}><a href={site + item.path[0].alias} >{item.title[0].value}</a></p> );
   })
   return (
     <div className="container">
